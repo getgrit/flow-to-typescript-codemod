@@ -14,7 +14,7 @@ type HasComponentProps<T, D extends unknown = DefaultProps<T>> = T extends (
 ) => React.ReactElement
   ? OmitDefaultProps<P, D>
   : never;
-export declare namespace Flow {
+export const flow = declare namespace Flow {
   // Abstract Component utility type
   // https://flow.org/en/docs/react/types/#toc-react-abstractcomponent
   type AbstractComponent<Config, Instance = any> = React.ComponentType<
@@ -44,4 +44,4 @@ export declare namespace Flow {
     O extends Record<string, any>,
     F extends (...args: any[]) => any
   > = { [P in keyof O]: ReturnType<F> };
-}
+};
